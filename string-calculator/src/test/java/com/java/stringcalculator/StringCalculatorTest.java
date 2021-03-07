@@ -27,12 +27,12 @@ public class StringCalculatorTest {
 	@Test
 	public void numberStringShouldReturnSameNumber() {
 		assertEquals(calculator.add("1"), 1);
-		assertEquals(calculator.add("5"), 5);
+		assertEquals(calculator.add("3"), 3);
 	}
 
 	@Test
 	public void numbersCommaDelimitedShouldBeSummed() {
 		assertEquals(calculator.add("1,2"), 3);
-		assertEquals(25, calculator.add("10,15"));
+		assertEquals(6, calculator.add("1,5"));
 	}
 }
