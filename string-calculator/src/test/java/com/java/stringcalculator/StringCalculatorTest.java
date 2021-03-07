@@ -70,4 +70,10 @@ public class StringCalculatorTest {
 	        assertEquals(calculator.add("5,10,1500"), 15);
 	       
 	    }
+	  //test -7 Delimiter can be of any length // Not working
+	    @Test
+	    public void delimeterofAnyLength() {
+	        assertEquals(calculator.add("5,10,1500"), 15);
+	       
+	    }
 }
