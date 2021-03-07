@@ -56,4 +56,12 @@ public class StringCalculatorTest {
 	        assertEquals(calculator.add("9,8,7"), 24);
 	        assertEquals(calculator.add("50\n20\n30"), 100);
 	    }
+// Test-5 Negative Inputs
+	    @Test
+	    public void negativeInput() {
+	        thrown.expect(IllegalArgumentException.class);
+	        thrown.expectMessage("Negative input Not Allowed");
+	        calculator.add("-10");
+	        calculator.add("-7,10\n-15");
+	    }
 }

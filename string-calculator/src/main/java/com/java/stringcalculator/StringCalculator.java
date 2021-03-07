@@ -21,8 +21,11 @@ public class StringCalculator {
 
     private int stringToInt(String number) {
         int num = Integer.parseInt(number);
-       
+        if (num < 0) {
+            throw new IllegalArgumentException("Negative input Not Allowed");
+        } else {
             return num;
+        }
         
     }
 
