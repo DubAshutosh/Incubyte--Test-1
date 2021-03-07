@@ -18,6 +18,7 @@ public class StringCalculatorTest {
 	public void initialize() {
 		calculator = new StringCalculator();
 	}
+
 /// Test -1 Basic Test
 	@Test
 	public void emptyStringShouldReturn0() {
@@ -35,11 +36,24 @@ public class StringCalculatorTest {
 		assertEquals(calculator.add("1,2"), 3);
 		assertEquals(6, calculator.add("1,5"));
 	}
-	
-//Test -2 Unknown amount of numbers
+
+    //Test -2 Unknown amount of numbers
+	@Test
+	public void handleMultipleInput() {
+		assertEquals(45, calculator.add("1,2,3,4,5,6,7,8,9"));
+
+	}
+
+	// Test-3 Handle new Line
+	@Test
+	public void numbersNewlineDelimiter() {
+		assertEquals(calculator.add("1\n2"), 3);
+		assertEquals(calculator.add("50\n50"), 100);
+	}
+	//Test-4 Support Different Delimiter
 	 @Test
-	    public void handleMultipleInput() {
-		 assertEquals(45, calculator.add("1,2,3,4,5,6,7,8,9"));
-	        
+	    public void differentDelimiter() {
+	        assertEquals(calculator.add("9,8,7"), 24);
+	        assertEquals(calculator.add("50\n20\n30"), 100);
 	    }
 }
